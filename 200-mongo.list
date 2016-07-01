@@ -1,0 +1,5 @@
+## Debian 
+deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen
+
+## Ubuntu
+deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen

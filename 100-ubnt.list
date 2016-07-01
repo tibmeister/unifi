@@ -1,0 +1,10 @@
+## Debian/Ubuntu
+# stable => unifi4
+# deb http://www.ubnt.com/downloads/unifi/debian unifi4 ubiquiti
+deb http://www.ubnt.com/downloads/unifi/debian unifi5 ubiquiti
+
+#deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti
+
+# oldstable => unifi3
+# deb http://www.ubnt.com/downloads/unifi/debian unifi3 ubiquiti
+# deb http://www.ubnt.com/downloads/unifi/debian oldstable ubiquiti
