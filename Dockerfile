@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 MAINTAINER tibmeister
 
@@ -15,7 +15,7 @@ ADD /gpgkey.sh /root/gpgkey.sh
 RUN /root/gpgkey.sh
 RUN apt-get update && \
 	apt-get install -y \
-	unifi=5.4.11-9184 \
+	unifi=5.5.20-9565 \
 	&& apt-get autoremove -y \
 	&& apt-get autoclean all
 
@@ -24,6 +24,6 @@ RUN apt-get update && \
 WORKDIR /usr/lib/unifi 
 CMD ["java", "-Xmx256M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"] 
 
-LABEL version="5.4.11-9184"
-LABEL Description="UniFi controller 5.4.11-9184 with autostart"
+LABEL version="5.5.20-9565"
+LABEL Description="UniFi controller 5.5.20-9565 with autostart"
 

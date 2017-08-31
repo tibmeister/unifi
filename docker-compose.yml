@@ -7,13 +7,15 @@ services:
       - /nfs/swarm/unifi/data:/usr/lib/unifi/data
       - /nfs/swarm/unifi/logs:/usr/lib/unifi/logs
     ports:
-      - 6789:6789
-      - 8080:8080
-      - 8443:8443
-      - 8880:8880
-      - 37117:37117
-      - 161:8161
-    deploy:
+      - 6789:6789 #port used for throughput measurement, including UniFi mobile speedtest
+      - 8080:8080 #port for UAP to inform controller
+      - 8443:8443 #port for controller GUI / API, as seen in web browser
+      - 8880:8880 #port for HTTP portal redirect
+      - 8843:8843 #port for HTTPS portal redirect
+      - 10001:10001/udp #for AP Discovery
+      - 5656-5699:5656-5699/udp #for AP-EDU Broadcasts
+      - 27117:27117 #local-bound port for DB server
+      - 3478:3478/udp # UDP port used for STUN. v4.5.2+                                                                                                                                                                                          deploy:
       replicas: 1
     networks:
       - UniFi
