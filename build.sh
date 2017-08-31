@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker build -t docker1:5000/unifi:5.4.11 .
-docker tag docker1:5000/unifi:5.4.11 docker1:5000/unifi:latest
-docker push docker1:5000/unifi:5.4.11 
-docker push docker1:5000/unifi:latest
+docker build -t tibmeister/unifi:5.4.11 .
+docker tag tibmeister/unifi:5.4.11 tibmeister/unifi:latest
+docker push tibmeister/unifi:5.4.11 
+docker push tibmeister/unifi:latest
