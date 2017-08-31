@@ -3,7 +3,7 @@
 # docker-unifi
 
 The UniFi® Controller software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance. [Unifi](https://www.ubnt.com/enterprise/#unifi)
-[![unifi](https://prd-www-cdn.ubnt.com/media/images/dashboard/logos/unifi.svg){:height="350px" width="350px"}][appurl]
+[![unifi](https://prd-www-cdn.ubnt.com/media/images/dashboard/logos/unifi.svg | width=48)][appurl]
 
 This project is aimed to provide a turn-key solution for running the UniFi® Controller software in a Docker Swarm using v3 compose files to create a stack.
 
