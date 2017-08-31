@@ -1,0 +1,22 @@
+version: "3.3"
+
+services:
+  unifi5:
+    image: docker1:5000/unifi:latest
+    volumes:
+      - /nfs/swarm/unifi/data:/usr/lib/unifi/data
+      - /nfs/swarm/unifi/logs:/usr/lib/unifi/logs
+    ports:
+      - 6789:6789
+      - 8080:8080
+      - 8443:8443
+      - 8880:8880
+      - 37117:37117
+      - 161:8161
+    deploy:
+      replicas: 1
+    networks:
+      - UniFi
+
+networks:
+  UniFi:
