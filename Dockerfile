@@ -25,7 +25,7 @@ ADD /200-mongo.list /etc/apt/sources.list.d/200-mongo.list
 
 RUN apt-get update \
 	&& apt-get install -y \
-	unifi=5.6.29-10253 \
+	unifi=5.7.23-10670 \
 	&& apt-get autoremove -y \
 	&& apt-get autoclean all
 
@@ -35,6 +35,6 @@ WORKDIR /usr/lib/unifi
 
 CMD ["java", "-Xmx256M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"] 
 
-LABEL version="5.6.29-10253"
-LABEL Description="UniFi controller 5.6.29-10253 with autostart and haveged installed"
+LABEL version="5.7.23-10670"
+LABEL Description="UniFi controller 5.7.23-10670 with autostart and haveged installed"
 
