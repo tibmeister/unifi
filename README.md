@@ -5,8 +5,6 @@
 [![Docker Automated build](https://img.shields.io/docker/automated/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/docker-unifi/)
 [![Docker Build Status](https://img.shields.io/docker/build/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/docker-unifi/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/docker-unifi/)
-[![](https://images.microbadger.com/badges/image/tibmeister/docker-unifi.svg)](https://microbadger.com/images/tibmeister/docker-unifi "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/tibmeister/docker-unifi.svg)](https://microbadger.com/images/tibmeister/docker-unifi "Get your own version badge on microbadger.com")
 
 <a href="https://www.ubnt.com/enterprise/#unifi">
 <img src="https://prd-www-cdn.ubnt.com/media/images/dashboard/logos/unifi.svg" width="250" height="250" />
