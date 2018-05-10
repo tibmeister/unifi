@@ -6,15 +6,12 @@
 [![Docker Build Status](https://img.shields.io/docker/build/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/docker-unifi/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/docker-unifi/)
 
-<a href="https://www.ubnt.com/enterprise/#unifi">
-<img src="https://prd-www-cdn.ubnt.com/media/images/dashboard/logos/unifi.svg" width="250" height="250" />
-</a>
-<p>
+[![UBNT](https://dl.ubnt.com/press/Company_Logos/Alternate/WEB/UBNT_Alternate_Logo_RGB.png)](https://www.ubnt.com)
+![UniFi Logo](https://dl.ubnt.com/press/logo-UniFi.png)
+
 The UniFi® Controller software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance. (https://www.ubnt.com/enterprise/#unifi)
-</p>
-<p>
+
 This project is aimed to provide a turn-key solution for running the UniFi® Controller software in a Docker Swarm using v3 compose files to create a stack.
-</p>
 
 [Unifi Ports Used](https://help.ubnt.com/hc/en-us/articles/218506997-UniFi-Ports-Used)
 
