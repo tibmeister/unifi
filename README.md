@@ -1,6 +1,11 @@
 [ubilogo]: https://prd-www-cdn.ubnt.com/media/images/dashboard/logos/unifi.svg
 
 # docker-unifi
+
+[![Docker Automated build](https://img.shields.io/docker/automated/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/docker-unifi/)
+[![Docker Build Status](https://img.shields.io/docker/build/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/docker-unifi/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/docker-unifi/)
+
 <a href="https://www.ubnt.com/enterprise/#unifi">
 <img src="https://prd-www-cdn.ubnt.com/media/images/dashboard/logos/unifi.svg" width="250" height="250" />
 </a>
