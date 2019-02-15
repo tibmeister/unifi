@@ -8,17 +8,19 @@ RUN mkdir -p /var/log/supervisor /usr/lib/unifi/data && \
 	touch /usr/lib/unifi/data/.unifidatadir 
 
 ADD /gpgkey.sh /root/gpgkey.sh
+CMD apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50
+CMD wget -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ui.com/unifi/unifi-repo.gpg
 
 RUN apt-get update \
 	&& apt-get install -y \
 	apt-utils \
-	&& apt-get install -y \
 	wget \
 	haveged \
+	apt-transport-https \
 	&& /root/gpgkey.sh \
 	&& update-rc.d haveged defaults
 
-WORKDIR /tmp
+#WORKDIR /tmp
 #CMD wget https://dl.ubnt.com/unifi/5.8.24/unifi_sysvinit_all.deb && dpkg -i unifi_sysvinit_all.deb
 
 ADD /100-ubnt.list /etc/apt/sources.list.d/100-ubnt.list
@@ -26,6 +28,12 @@ ADD /200-mongo.list /etc/apt/sources.list.d/200-mongo.list
 
 RUN apt-get update \
 	&& apt-get install -y \
+	binutils \
+	ca-certificates-java \
+	java-common \
+	jsvc \
+	libcommons-daemon-java \
+        mongodb-server=1:2.6.10-0ubuntu1 \
 	unifi=5.10.17-11638-1 \
 	&& apt-get autoremove -y \
 	&& apt-get autoclean all

@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   unifi5:
-    image: tibmeister/docker-unifi:5.7.23-10670
+    image: tibmeister/unifi:5.10.17
     volumes:
       - /nfs/swarm/unifi/data:/usr/lib/unifi/data
       - /nfs/swarm/unifi/logs:/usr/lib/unifi/logs
