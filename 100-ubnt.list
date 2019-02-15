@@ -5,7 +5,8 @@
 #deb http://www.ubnt.com/downloads/unifi/debian unifi5 ubiquiti
 #deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti
 #Current as of 2/14/2019
-deb http://www.ui.com/downloads/unifi/debian stable ubiquiti
+#deb http://www.ui.com/downloads/unifi/debian stable ubiquiti
+deb http://www.ubnt.com/downloads/unifi/debian unifi-5.10 ubiquiti
 
 # stable => unifi4
 # deb http://www.ubnt.com/downloads/unifi/debian unifi4 ubiquiti
