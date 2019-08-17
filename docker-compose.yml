@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   unifi5:
-    image: tibmeister/unifi:5.10.17-11638
+    image: tibmeister/unifi:5.10.25-11682-1
     volumes:
       - /nfs/swarm/unifi/data:/usr/lib/unifi/data
       - /nfs/swarm/unifi/logs:/usr/lib/unifi/logs
@@ -17,6 +17,7 @@ services:
       - 5656-5699:5656-5699/udp #for AP-EDU Broadcasts
       - 27117:27117 #local-bound port for DB server
       - 3478:3478/udp # UDP port used for STUN. v4.5.2+
+      - 1513:1513/udp # port for log forwarding
 #    deploy:
 #      placement:
 #        constraints:
