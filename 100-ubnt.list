@@ -1,9 +1,15 @@
+#Reference
+#https://help.ubnt.com/hc/en-us/articles/220066768-UniFi-How-to-Install-and-Update-via-APT-on-Debian-or-Ubuntu
 ## Debian/Ubuntu
+# stable => unifi5
+#deb http://www.ubnt.com/downloads/unifi/debian unifi5 ubiquiti
+#deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti
+#Current as of 2/14/2019
+#deb http://www.ui.com/downloads/unifi/debian stable ubiquiti
+deb http://www.ubnt.com/downloads/unifi/debian unifi-5.10 ubiquiti
+
 # stable => unifi4
 # deb http://www.ubnt.com/downloads/unifi/debian unifi4 ubiquiti
-#deb http://www.ubnt.com/downloads/unifi/debian unifi5 ubiquiti
-
-deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti
 
 # oldstable => unifi3
 # deb http://www.ubnt.com/downloads/unifi/debian unifi3 ubiquiti
