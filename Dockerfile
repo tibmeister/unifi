@@ -8,24 +8,30 @@ RUN mkdir -p /var/log/supervisor /usr/lib/unifi/data && \
 	touch /usr/lib/unifi/data/.unifidatadir 
 
 ADD /gpgkey.sh /root/gpgkey.sh
+CMD apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50
+CMD wget -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ui.com/unifi/unifi-repo.gpg
 
 RUN apt-get update \
 	&& apt-get install -y \
 	apt-utils \
-	&& apt-get install -y \
 	wget \
 	haveged \
+	apt-transport-https \
 	&& /root/gpgkey.sh \
 	&& update-rc.d haveged defaults
-
-
 
 ADD /100-ubnt.list /etc/apt/sources.list.d/100-ubnt.list
 ADD /200-mongo.list /etc/apt/sources.list.d/200-mongo.list
 
 RUN apt-get update \
 	&& apt-get install -y \
-	unifi=5.6.29-10253 \
+	binutils \
+	ca-certificates-java \
+	java-common \
+	jsvc \
+	libcommons-daemon-java \
+        mongodb-server=1:2.6.10-0ubuntu1 \
+	unifi=5.10.25-11682-1 \
 	&& apt-get autoremove -y \
 	&& apt-get autoclean all
 
@@ -35,6 +41,6 @@ WORKDIR /usr/lib/unifi
 
 CMD ["java", "-Xmx256M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"] 
 
-LABEL version="5.6.29-10253"
-LABEL Description="UniFi controller 5.6.29-10253 with autostart and haveged installed"
+LABEL version="5.10.25-11682-1"
+LABEL Description="UniFi controller with autostart and haveged installed"
 
