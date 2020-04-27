@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   unifi5:
-    image: tibmeister/unifi:5.12.35-12979-1
+    image: tibmeister/unifi:5.12.66-13102-1
     volumes:
       - /nfs/swarm/unifi/data:/usr/lib/unifi/data
       - /nfs/swarm/unifi/logs:/usr/lib/unifi/logs
