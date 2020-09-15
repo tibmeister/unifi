@@ -30,8 +30,8 @@ ADD /200-mongo.list /etc/apt/sources.list.d/200-mongo.list
 
 RUN apt-get update --allow-releaseinfo-change \
 	&& apt-get install -y \
-        mongodb-org-server=3.4.23 \
-	unifi=5.13.32-13646-1 \
+        mongodb-org-server=3.4.24 \
+	unifi=6.0.20-14236-1 \
 	&& apt-get autoremove -y \
 	&& apt-get autoclean all
 
@@ -41,6 +41,6 @@ WORKDIR /usr/lib/unifi
 
 CMD ["java", "-Xmx256M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"] 
 
-LABEL version="5.13.32-13646-1"
+LABEL version="6.0.20-14236-1"
 LABEL Description="UniFi controller with autostart and haveged installed"
 
