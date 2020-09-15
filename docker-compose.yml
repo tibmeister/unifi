@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   unifi5:
-    image: tibmeister/unifi:5.12.66-13102-1
+    image: tibmeister/unifi:5.13.32-13646-1
     volumes:
       - /nfs/swarm/unifi/data:/usr/lib/unifi/data
       - /nfs/swarm/unifi/logs:/usr/lib/unifi/logs
@@ -18,10 +18,13 @@ services:
       - 27117:27117 #local-bound port for DB server
       - 3478:3478/udp # UDP port used for STUN. v4.5.2+
       - 1513:1513/udp # port for log forwarding
+    logging:
+      driver: json-file
     deploy:
       placement:
         constraints:
           - node.hostname != opti.mus.tiberiansun.us
+          - node.role != manager
     networks:
       - UniFi
 
