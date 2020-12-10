@@ -1,8 +1,8 @@
 version: "3.3"
 
 services:
-  unifi5:
-    image: tibmeister/unifi:5.13.32-13646-1
+  controller:
+    image: tibmeister/unifi:6.0.41-14327-1
     volumes:
       - /nfs/swarm/unifi/data:/usr/lib/unifi/data
       - /nfs/swarm/unifi/logs:/usr/lib/unifi/logs
@@ -23,7 +23,6 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname != opti.mus.tiberiansun.us
           - node.role != manager
     networks:
       - UniFi
