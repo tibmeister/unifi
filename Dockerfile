@@ -12,6 +12,7 @@ ADD /gpgkey.sh /root/gpgkey.sh
 
 RUN apt-get update \
 	&& apt-get install -y \
+        iputils-ping \
 	apt-utils \
 	wget \
 	haveged \
@@ -31,7 +32,7 @@ ADD /200-mongo.list /etc/apt/sources.list.d/200-mongo.list
 RUN apt-get update --allow-releaseinfo-change \
 	&& apt-get install -y \
         mongodb-org-server=3.4.24 \
-	unifi=6.0.41-14327-1 \
+	unifi=6.0.45-14358-1 \
 	&& apt-get autoremove -y \
 	&& apt-get autoclean all
 
@@ -41,6 +42,6 @@ WORKDIR /usr/lib/unifi
 
 CMD ["java", "-Xmx256M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"]
 
-LABEL version="6.0.41-14327-1"
+LABEL version="6.0.45-14358-1"
 LABEL Description="UniFi controller with autostart and haveged installed"
 
