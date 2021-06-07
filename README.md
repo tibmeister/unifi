@@ -3,7 +3,7 @@
 # docker-unifi
 
 [![Docker Automated build](https://img.shields.io/docker/automated/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/docker-unifi/)
-[![Docker Build Status](https://img.shields.io/docker/build/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/docker-unifi/)
+[![Docker Build Status](https://img.shields.io/docker/build/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/unifi/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/docker-unifi/)
 
 [![UBNT](https://dl.ubnt.com/press/Company_Logos/Alternate/WEB/UBNT_Alternate_Logo_RGB.png)](https://www.ubnt.com)
