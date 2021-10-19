@@ -10,7 +10,7 @@ RUN mkdir -p /var/log/supervisor /usr/lib/unifi/data && \
 
 ADD /gpgkey.sh /root/gpgkey.sh
 
-RUN apt-get update \
+RUN apt-get update -y \
 	&& apt-get install -y \
         iputils-ping \
 	apt-utils \
@@ -29,7 +29,7 @@ RUN apt-get update \
 ADD /100-ubnt-unifi.list /etc/apt/sources.list.d/100-ubnt-unifi.list
 ADD /200-mongo.list /etc/apt/sources.list.d/200-mongo.list
 
-RUN apt-get update --allow-releaseinfo-change \
+RUN apt-get update --allow-releaseinfo-change -y \
 	&& apt-get install -y \
         mongodb-org-server=3.4.24 \
 	unifi=6.4.54-16067-1 \
