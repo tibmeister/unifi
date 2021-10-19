@@ -32,7 +32,7 @@ ADD /200-mongo.list /etc/apt/sources.list.d/200-mongo.list
 RUN apt-get update --allow-releaseinfo-change \
 	&& apt-get install -y \
         mongodb-org-server=3.4.24 \
-	unifi=6.0.45-14358-1 \
+	unifi=6.4.54-16067-1 \
 	&& apt-get autoremove -y \
 	&& apt-get autoclean all
 
