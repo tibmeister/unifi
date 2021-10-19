@@ -8,12 +8,12 @@ on:
   push:
     #branches: [ master ]
     tags:
-      - "*.*.*"
+      - "v*.*.*"
       # To fire this workflow, first switch to the branch then use the following 
       # commands to trigger on a tag instead of branch, in this example we are on
       # branch 6.4.54-16067-1:
-      # git tag -a 6.4.54
-      # git push origin 6.4.54
+      # git tag -a v6.4.54
+      # git push origin v6.4.54
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
