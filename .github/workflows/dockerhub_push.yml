@@ -45,7 +45,7 @@ jobs:
           echo ::set-output name=tags::${TAGS}
 
       - name: Tag
-        run: echo ${{ secrets.DOCKER_HUB_USERNAME }}/${{ steps.prep.outputs.tags }}
+        run: echo ${{ steps.prep.outputs.tags }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -69,7 +69,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ steps.prep.outputs.tags }}
+          tags: ${{ steps.prep.outputs.tags }}
           
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
