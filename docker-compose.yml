@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   controller:
-    image: tibmeister/unifi:6.0.41-14327-1
+    image: tibmeister/unifi:6.0.45-14358-1
     volumes:
       - /nfs/swarm/unifi/data:/usr/lib/unifi/data
       - /nfs/swarm/unifi/logs:/usr/lib/unifi/logs
