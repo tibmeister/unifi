@@ -42,6 +42,6 @@ WORKDIR /usr/lib/unifi
 
 CMD ["java", "-Xmx256M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"]
 
-LABEL version="6.0.45-14358-1"
+LABEL version="6.4.54.16067-1"
 LABEL Description="UniFi controller with autostart and haveged installed"
 
