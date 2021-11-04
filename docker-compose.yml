@@ -14,7 +14,6 @@ services:
       - 8843:8843 #port for HTTPS portal redirect
       - 8880:8880 #Port used for HTTP portal redirection
       - 6789:6789 #port used for throughput measurement, including UniFi mobile speedtest
-      - 27117:27117 #local-bound port for DB server
       - 10001:10001/udp #for AP Discovery
       - 1900:1900/udp # Port used for "Make application discoverable on L2 network" in the UniFi Network settings.
     logging:
