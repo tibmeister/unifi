@@ -3,6 +3,7 @@ version: "3.3"
 services:
   controller:
     image: tibmeister/unifi:6.4.54
+    network_mode: bridge
     volumes:
       - /nfs/swarm/unifi/data:/usr/lib/unifi/data
       - /nfs/swarm/unifi/logs:/usr/lib/unifi/logs
