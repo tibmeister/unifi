@@ -2,14 +2,13 @@ version: "3.3"
 
 services:
   controller:
-    image: tibmeister/unifi:6.0.45-14358-1
+    image: tibmeister/unifi:6.4.54
     volumes:
       - /nfs/swarm/unifi/data:/usr/lib/unifi/data
       - /nfs/swarm/unifi/logs:/usr/lib/unifi/logs
     ports:
       - 3478:3478/udp # Port used for STUN
       - 5514:5514/udp #Remote syslog
-      - 8080:8080 #Used for device and app communications
       - 8443:8443 #port for controller GUI / API, as seen in web browser
       - 8080:8080 #port for UAP to inform controller
       - 8843:8843 #port for HTTPS portal redirect
