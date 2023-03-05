@@ -43,7 +43,7 @@ ADD /100-ubnt-unifi.list /etc/apt/sources.list.d/100-ubnt-unifi.list
 
 RUN apt-get update --allow-releaseinfo-change -y \
 	&& apt-get install -y \
-	unifi=7.3.76-19582-1 \
+	unifi=7.3.83-19645-1 \
 	&& apt-get autoremove -y \
 	&& apt-get autoclean all
 
@@ -51,6 +51,6 @@ WORKDIR /usr/lib/unifi
 
 CMD ["java", "-Xmx256M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"]
 
-LABEL version="7.3.76-19582-1"
+LABEL version="7.3.83-19645-1"
 LABEL Description="UniFi controller with autostart and haveged installed"
 
