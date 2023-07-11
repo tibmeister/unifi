@@ -9,7 +9,7 @@ services:
     ports:
       - 3478:3478/udp # Port used for STUN
       - 5514:5514/udp #Remote syslog
-      - 8443:8443 #port for controller GUI / API, as seen in web browser
+      - 8543:8443 #port for controller GUI / API, as seen in web browser
       - 8080:8080 #port for UAP to inform controller
       - 8843:8843 #port for HTTPS portal redirect
       - 8880:8880 #Port used for HTTP portal redirection
