@@ -33,17 +33,18 @@ RUN set -x \
 	gnupg2 \
 	binutils \
 	ca-certificates-java \
-	openjdk-8-jre-headless \
-	&& apt --no-install-recommends install -y \
-	mongodb-server-core \
-	&& /root/gpgkey.sh \
+	openjdk-8-jre-headless 
+
+RUN set -x && apt --no-install-recommends install -y mongodb-server-core
+RUN set -x /root/gpgkey.sh \
 	&& update-rc.d haveged defaults
 
 ADD /100-ubnt-unifi.list /etc/apt/sources.list.d/100-ubnt-unifi.list
 
-RUN apt-get update --allow-releaseinfo-change -y \
+RUN wget -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ui.com/unifi/unifi-repo.gpg \ 
+	&& apt-get update --allow-releaseinfo-change -y \
 	&& apt-get install -y \
-	unifi=7.3.83-19645-1 \
+	unifi=7.4.162-21057-1 \
 	&& apt-get autoremove -y \
 	&& apt-get autoclean all
 
