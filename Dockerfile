@@ -31,15 +31,14 @@ RUN set -x \
 	haveged \
 	apt-transport-https \
 	gnupg2 \
-	binutils \
-	ca-certificates-java \
-	openjdk-17-jre
+	binutils
 
 RUN set -x && apt --no-install-recommends install -y mongodb-server-core
 RUN set -x /root/gpgkey.sh \
 	&& update-rc.d haveged defaults
 
 #ADD /100-ubnt-unifi.list /etc/apt/sources.list.d/100-ubnt-unifi.list
+RUN set -x && apt --no-install-recommends install -y ca-certificates openjdk-17-jre
 
 RUN echo 'deb https://www.ui.com/downloads/unifi/debian stable ubiquiti' | tee /etc/apt/sources.list.d/100-ubnt-unifi.list \
 	&& wget -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ui.com/unifi/unifi-repo.gpg \
