@@ -33,15 +33,16 @@ RUN set -x \
 	gnupg2 \
 	binutils \
 	ca-certificates-java \
-	openjdk-17-jre-headless
+	openjdk-17-jre
 
 RUN set -x && apt --no-install-recommends install -y mongodb-server-core
 RUN set -x /root/gpgkey.sh \
 	&& update-rc.d haveged defaults
 
-ADD /100-ubnt-unifi.list /etc/apt/sources.list.d/100-ubnt-unifi.list
+#ADD /100-ubnt-unifi.list /etc/apt/sources.list.d/100-ubnt-unifi.list
 
-RUN wget -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ui.com/unifi/unifi-repo.gpg \
+RUN echo 'deb https://www.ui.com/downloads/unifi/debian stable ubiquiti' | tee /etc/apt/sources.list.d/100-ubnt-unifi.list \
+	&& wget -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ui.com/unifi/unifi-repo.gpg \
 	&& apt-get update --allow-releaseinfo-change -y \
 	&& apt-get install -y \
 	unifi=7.5.174-22700-1 \
