@@ -1,47 +1,57 @@
-FROM ubuntu:18.04
-#FROM mongo:3.6.16-xenial
+FROM ubuntu:20.04
 
 MAINTAINER tibmeister
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive \
+	PGID=999 \
+    	PUID=999 
 
 RUN mkdir -p /var/log/supervisor /usr/lib/unifi/data && \
 	touch /usr/lib/unifi/data/.unifidatadir
 
 ADD /gpgkey.sh /root/gpgkey.sh
 
-RUN apt-get update -y \
-	&& apt-get install -y \
-        iputils-ping \
+RUN set -x \
+    	&& groupadd -r unifi -g $PGID \
+    	&& useradd --no-log-init -r -u $PUID -g $PGID unifi \
+	&& apt update -y \
+	&& apt --no-install-recommends install -y \
 	apt-utils \
+	&& apt --no-install-recommends install -y \
+        iputils-ping \
+	binutils \
+	curl \
+        bash-completion \
+	dirmngr \
+	gosu \
+        libcap2 \
+	libcap2-bin \
+	procps \ 
 	wget \
 	haveged \
 	apt-transport-https \
 	gnupg2 \
 	binutils \
 	ca-certificates-java \
-	java-common \
-	jsvc \
-	libcommons-daemon-java \
-	&& /root/gpgkey.sh \
+	openjdk-8-jre-headless 
+
+RUN set -x && apt --no-install-recommends install -y mongodb-server-core
+RUN set -x /root/gpgkey.sh \
 	&& update-rc.d haveged defaults
 
 ADD /100-ubnt-unifi.list /etc/apt/sources.list.d/100-ubnt-unifi.list
-ADD /200-mongo.list /etc/apt/sources.list.d/200-mongo.list
 
-RUN apt-get update --allow-releaseinfo-change -y \
+RUN wget -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ui.com/unifi/unifi-repo.gpg \ 
+	&& apt-get update --allow-releaseinfo-change -y \
 	&& apt-get install -y \
-        mongodb-org-server=3.4.24 \
-	unifi=6.4.54-16067-1 \
+	unifi=7.4.162-21057-1 \
 	&& apt-get autoremove -y \
 	&& apt-get autoclean all
 
-#VOLUME /usr/lib/unifi/data
-#EXPOSE  8443 8880 8080 27117 8161
 WORKDIR /usr/lib/unifi
 
 CMD ["java", "-Xmx256M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"]
 
-LABEL version="6.4.54.16067-1"
+LABEL version="7.3.83-19645-1"
 LABEL Description="UniFi controller with autostart and haveged installed"
 
