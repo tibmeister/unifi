@@ -33,7 +33,7 @@ RUN set -x \
 	gnupg2 \
 	binutils \
 	ca-certificates-java \
-	openjdk-8-jre-headless
+	openjdk-17-jre-headless
 
 RUN set -x && apt --no-install-recommends install -y mongodb-server-core
 RUN set -x /root/gpgkey.sh \
