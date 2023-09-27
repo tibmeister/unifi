@@ -2,9 +2,10 @@
 
 # docker-unifi
 
-[![Docker Automated build](https://img.shields.io/docker/automated/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/docker-unifi/)
-[![Docker Build Status](https://img.shields.io/docker/build/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/unifi/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/tibmeister/docker-unifi.svg?style=plastic)](https://hub.docker.com/r/tibmeister/docker-unifi/)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/tibmeister/unifi/dockerhub_push.yml?style=plastic&label=CI%20Build%20to%20DockerHub)
+[![Docker Pulls](https://img.shields.io/docker/pulls/tibmeister/unifi.svg?style=plastic&label=DockerHub%20Pulls)](https://hub.docker.com/r/tibmeister/unifi/)
+![GitHub issues](https://img.shields.io/github/issues/tibmeister/unifi?style=plastic&label=Issues)
+![GitHub](https://img.shields.io/github/license/tibmeister/unifi?style=plastic&label=License)
 
 [![UBNT](https://dl.ubnt.com/press/Company_Logos/Alternate/WEB/UBNT_Alternate_Logo_RGB.png)](https://www.ubnt.com)
 ![UniFi Logo](https://dl.ubnt.com/press/logo-UniFi.png)
