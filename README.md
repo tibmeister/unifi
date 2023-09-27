@@ -1,6 +1,6 @@
 [ubilogo]: https://prd-www-cdn.ubnt.com/media/images/dashboard/logos/unifi.svg
 
-# docker-unifi
+# unifi
 
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/tibmeister/unifi/dockerhub_push.yml?style=plastic&label=CI%20Build%20to%20DockerHub)
 [![Docker Pulls](https://img.shields.io/docker/pulls/tibmeister/unifi.svg?style=plastic&label=DockerHub%20Pulls)](https://hub.docker.com/r/tibmeister/unifi/)
