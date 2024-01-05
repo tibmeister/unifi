@@ -1,5 +1,4 @@
 FROM ubuntu:20.04
-MAINTAINER tibmeister
 LABEL version="8.0.26-24388-1"
 LABEL Description="UniFi controller with autostart and haveged installed"
 
@@ -20,8 +19,8 @@ ENV BASEDIR=/usr/lib/unifi \
 	CERT_IS_CHAIN=false \
 	BIND_PRIV=false \
 	RUNAS_UID0=false \
-	UNIFI_GID=999 \
-	UNIFI_UID=999 \
+	UNIFI_GID=1000 \
+	UNIFI_UID=1000 \
 	TIMEZONE=Etc/UTC
 
 COPY docker-build.sh /usr/local/bin/
