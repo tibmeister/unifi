@@ -65,18 +65,18 @@ rm -f ./unifi.deb
 chown -R unifi:unifi /usr/lib/unifi /var/log/unifi /var/run/unifi
 rm -rf /var/lib/apt/lists/*
 
-rm -Rf ${ODATADIR} ${OLOGDIR} ${ORUNDIR} ${BASEDIR}/data ${BASEDIR}/run ${BASEDIR}/logs
-mkdir -p ${DATADIR} ${LOGDIR} ${RUNDIR}
-ln -s ${DATADIR} ${BASEDIR}/data
-ln -s ${RUNDIR} ${BASEDIR}/run
-ln -s ${LOGDIR} ${BASEDIR}/logs
-ln -s ${DATADIR} ${ODATADIR}
-ln -s ${LOGDIR} ${OLOGDIR}
-ln -s ${RUNDIR} ${ORUNDIR}
+# rm -Rf ${ODATADIR} ${OLOGDIR} ${ORUNDIR} ${BASEDIR}/data ${BASEDIR}/run ${BASEDIR}/logs
+# mkdir -p ${DATADIR} ${LOGDIR} ${RUNDIR}
+# ln -s ${DATADIR} ${BASEDIR}/data
+# ln -s ${RUNDIR} ${BASEDIR}/run
+# ln -s ${LOGDIR} ${BASEDIR}/logs
+# ln -s ${DATADIR} ${ODATADIR}
+# ln -s ${LOGDIR} ${OLOGDIR}
+# ln -s ${RUNDIR} ${ORUNDIR}
 mkdir -p /var/cert ${CERTDIR}
 ln -s ${CERTDIR} /var/cert/unifi
 
-chown -R unifi:unifi /unifi
+# chown -R unifi:unifi /unifi
 
 rm -rf "${0}"
 
