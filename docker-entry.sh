@@ -141,6 +141,7 @@ if [[ "${@}" == "unifi" ]]; then
     # Only set if the file doesn't exist for now.  Later, we will parse the file and switch settings
     if ! [[ -f "${confFile}" ]]; then
         log 'Setting up a default system.properties file'
+        touch "${confFile}"
         for key in "${!settings[@]}"; do
         confSet "$confFile" "$key" "${settings[$key]}"
         done
