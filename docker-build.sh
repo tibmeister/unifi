@@ -76,7 +76,7 @@ ln -s ${RUNDIR} ${ORUNDIR}
 mkdir -p /var/cert ${CERTDIR}
 ln -s ${CERTDIR} /var/cert/unifi
 
-# chown -R unifi:unifi /unifi
+chown -R unifi:unifi /unifi
 
 rm -rf "${0}"
 
