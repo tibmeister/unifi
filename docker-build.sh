@@ -33,17 +33,6 @@ apt install -qy --no-install-recommends \
 
 update-rc.d haveged defaults
 
-# Install specific MognoDB Version
-# curl -L -o ./mongodb-server.tgz https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-4.4.27.tgz
-# tar -zxvf ./mongodb-server.tgz
-# rm ./mongodb-server.tgz
-# cp ./mongodb-linux-x86_64-ubuntu2004-4.4.27/bin/* /usr/local/bin/
-# rm -Rf ./mongodb-linux-x86_64-ubuntu2004-4.4.27
-
-# echo 'deb https://www.ui.com/downloads/unifi/debian stable ubiquiti' | tee /etc/apt/sources.list.d/100-ubnt-unifi.list
-
-# trycommand apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 06E85760C0A52C50
-
 if [ -d "/usr/local/docker/pre_build/$(dpkg --print-architecture)" ]; then
     find "/usr/local/docker/pre_build/$(dpkg --print-architecture)" -type f -exec '{}' \;
 fi
@@ -79,31 +68,3 @@ ln -s ${CERTDIR} /var/cert/unifi
 chown -R unifi:unifi /unifi
 
 rm -rf "${0}"
-
-
-# && apt update -y \
-# 	&& apt --no-install-recommends install -y \
-# 	 \
-# 	&& apt --no-install-recommends install -y \
-# 	iputils-ping \
-# 	binutils \
-# 	curl \
-# 	bash-completion \
-# 	dirmngr \
-# 	gosu \
-# 	libcap2 \
-# 	libcap2-bin \
-# 	procps \
-# 	wget \
-# 	 \
-# 	apt-transport-https \
-# 	gnupg2 \
-# 	binutils \
-# 	ca-certificates \
-# 	ca-certificates-java \
-# 	openjdk-17-jre-headless \
-# 	tzdata \
-# 	libcap2-bin \
-# 	procps \
-# 	gpg \
-# 	gpg-agent
