@@ -1,6 +1,6 @@
 services:
   controller:
-    image: tibmeister/unifi:7.4.162
+    image: tibmeister/unifi:7.5.176
     volumes:
       - ./temp/unifi/data:/unifi/data
       - ./temp/unifi/logs:/unifi/logs
