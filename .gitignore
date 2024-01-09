@@ -1,2 +1,3 @@
 # Directories to ignore
 temp/
+docker-compose.y*
