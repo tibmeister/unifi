@@ -1,6 +1,8 @@
 services:
   controller:
     image: tibmeister/unifi:7.5.176
+    environment:
+      - TIMEZONE=America/Chicago
     volumes:
       - ./temp/unifi/data:/unifi/data
       - ./temp/unifi/logs:/unifi/logs
