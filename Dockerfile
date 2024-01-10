@@ -1,11 +1,11 @@
 FROM ubuntu:20.04
-LABEL version="8.0.7"
+LABEL version="8.0.24"
 LABEL Description="UniFi controller with autostart and haveged installed"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Pulled from https://ui.com/download/releases/network-server
-ARG PKG_URL=https://dl.ui.com/unifi/8.0.7/unifi_sysvinit_all.deb
+ARG PKG_URL=https://dl.ui.com/unifi/8.0.24/unifi_sysvinit_all.deb
 
 ENV BASEDIR=/usr/lib/unifi \
 	DATADIR=/unifi/data \
