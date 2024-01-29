@@ -1,0 +1,29 @@
+services:
+  controller:
+    image: tibmeister/unifi:8.0.26
+    environment:
+      - TIMEZONE=America/Chicago
+    volumes:
+      - ./temp/unifi/data:/unifi/data
+      - ./temp/unifi/logs:/unifi/logs
+    ports:
+      - 3478:3478/udp # Port used for STUN
+      - 5514:5514/udp #Remote syslog
+      - 8543:8443 #port for controller GUI / API, as seen in web browser
+      - 8080:8080 #port for UAP to inform controller
+      - 8843:8843 #port for HTTPS portal redirect
+      - 8880:8880 #Port used for HTTP portal redirection
+      - 6789:6789 #port used for throughput measurement, including UniFi mobile speedtest
+      - 10001:10001/udp #for AP Discovery
+      - 1900:1900/udp # Port used for "Make application discoverable on L2 network" in the UniFi Network settings.
+    logging:
+      driver: json-file
+    deploy:
+      placement:
+        constraints:
+          - node.role != manager
+    networks:
+      - UniFi
+
+networks:
+  UniFi:

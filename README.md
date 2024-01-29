@@ -21,6 +21,8 @@ Determining the install method, I use this page:
 
 This is the Ubiquiti's UniFi software that has been nicely wrapped into a container.  In order to effectively run this, you will need to mount a volume for the container to store the MongoDB information in so that persistence exists.
 
+Starting with v7.5.176, this repo and the entire build pipeline for the docker image has been re-worked based on learnings and various insperations.  The major change is that some defaults are entered into the system.properties file, and the location in the container where you mount the volume has changed to be ''/unifi'', which will make things more consistant going forward.  As the install changes things, then the mount point will stay consistant.
+
 In order to run, here is an example that mounts a separate log and data volume into the container.  This also has the ports exposed that allow for L-2 discovery as well as general access to the controller using http://{host_ip}:8443/
 
-docker run --restart=always -d -p 8080:8080 -p 8443:8443 -p 8880:8880 -p 37117:27117 -p 161:8161 -p 6789:6789 -v /opt/unifi/data:/usr/lib/unifi/data -v /opt/unifi/logs:/usr/lib/unifi/logs --name unifi5 tibmeister/docker-unifi:latest
+Another change is the recommendation to use Compose to run the container.  My test docker-compose.yml file is included as an example of how to run this.
