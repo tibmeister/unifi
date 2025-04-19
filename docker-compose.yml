@@ -1,6 +1,6 @@
 services:
   controller:
-    image: tibmeister/unifi:8.0.26
+    image: tibmeister/unifi:9.1.118
     environment:
       - TIMEZONE=America/Chicago
     volumes:
