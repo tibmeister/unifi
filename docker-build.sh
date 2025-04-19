@@ -29,6 +29,7 @@ apt install -qy --no-install-recommends \
     libcap2-bin \
     tzdata \
     haveged \
+    less \
     gosu
 
 update-rc.d haveged defaults
