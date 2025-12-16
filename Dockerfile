@@ -1,11 +1,12 @@
-FROM ubuntu:20.04
-LABEL version="8.6.9"
+# FROM ubuntu:20.04
+FROM debian:bookworm
+LABEL version="10.0.160"
 LABEL Description="UniFi controller with autostart and haveged installed"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Pulled from https://ui.com/download/releases/network-server
-ARG PKG_URL=https://dl.ui.com/unifi/9.1.118-99i3gv2dd8/unifi_sysvinit_all.deb
+ARG PKG_URL=https://dl.ui.com/unifi/10.0.160/unifi_sysvinit_all.deb
 
 ENV BASEDIR=/usr/lib/unifi \
 	DATADIR=/unifi/data \
